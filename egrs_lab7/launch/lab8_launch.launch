@@ -1,0 +1,31 @@
+<launch>
+
+  <!-- This is the format for a comment in HTML --> 
+
+
+  <!-- Launches the TurtleBot's navigation file --> 
+  <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch" >
+    <!-- Sets the map to be the map generated in lab 4 --> 
+    <!-- Change “pfkb” to whatever your username is -->
+    <arg name="map_file" value="/home/egrs372/map.yaml" />
+  </include>
+
+  <!-- creates all the parameters --> 
+  <param name="/home_location/x" value="5.718" />
+  <param name="/home_location/y" value="-2.718" />
+  <param name="/home_location/theta" value="0" />
+  <param name="/pick_location/x" value="7.226" />
+  <param name="/pick_location/y" value="-0.325" />
+  <param name="/pick_location/theta" value="0" />
+  <param name="/place_location/x" value="6.25" />
+  <param name="/place_location/y" value="-2.539" />
+  <param name="/place_location/theta" value="0" />
+  <param name="/battery_low_level" value="10.0" />
+  <param name="/battery_high_level" value="11.0" />
+
+  <!-- Launches lab7 code --> 
+  <node pkg="egrs_lab7" type="lab7" name="lab7_launch" output="screen">
+  </node>
+
+</launch>
+
